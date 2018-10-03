@@ -49,7 +49,7 @@ extension Color: KDTreePoint {
         let (or, og, ob, oa) = otherPoint.components()
         return pow(r - or, 2) + pow(g - og, 2) + pow(b - ob, 2) + pow(a - oa, 2)
     }
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
     private func components() -> (Double, Double, Double, Double) {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0

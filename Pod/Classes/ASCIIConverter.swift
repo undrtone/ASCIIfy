@@ -77,7 +77,7 @@ open class ASCIIConverter {
         return backgroundColor == Color.clear
     }
 
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
     private func configureAttributes(_ attributes: inout [NSAttributedStringKey: Any], color: Color) {
     attributes[NSAttributedStringKey.foregroundColor] = color
     }
@@ -103,7 +103,7 @@ open class ASCIIConverter {
         )
         ctx!.textMatrix = CGAffineTransform(scaleX: 1.0, y: -1.0);
         ctx?.concatenate(flipVertical)
-        #if os(iOS)
+        #if os(iOS) || os(tvOS)
             var attributes = [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: Color.black] as [NSAttributedStringKey : Any]
         #elseif os(OSX)
             var attributes: [AnyHashable: Any] = [kCTFontAttributeName as AnyHashable: font, kCTForegroundColorAttributeName as AnyHashable: NSColor.black.cgColor]

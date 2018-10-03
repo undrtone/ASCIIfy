@@ -13,6 +13,7 @@ Includes UIImage and NSImage extensions. String and image output available.
   s.source           = { :git => "https://github.com/nickswalker/ASCIIfy.git", :tag => s.version.to_s }
   s.dependency "KDTree"  
   s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '10.0'
   s.osx.deployment_target = '10.11'
 
   s.swift_version = '4.1'

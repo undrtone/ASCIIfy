@@ -34,7 +34,7 @@ import Foundation
             return NSFont(name: self.fontName, size: CGFloat(size))!
         }
     }
-#elseif os(iOS)
+#elseif os(iOS) || os(tvOS)
     import UIKit
     public typealias Font = UIFont
     public typealias Image = UIImage

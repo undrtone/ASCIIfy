@@ -65,7 +65,7 @@ internal extension CGImage {
         #if os(OSX)
             let size = CGSize(width: self.width, height: self.height)
             return NSImage(cgImage: self, size: size)
-        #elseif os(iOS)
+        #elseif os(iOS) || os(tvOS)
             return UIImage(cgImage: self)
         #endif
     }
@@ -78,7 +78,7 @@ internal extension NSImage {
             return cgImage(forProposedRect: &rect, context: nil, hints: nil)!
     }
 }
-#elseif os(iOS)
+#elseif os(iOS) || os(tvOS)
     typealias CoreGraphicsImage = CGImage
 internal extension UIImage {
     var toCGImage: CoreGraphicsImage {
